@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+   http://www.liquibase.org/xml/ns/dbchangelog 
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Charles Alves" id="200223-2">
+		<createSequence
+			ordered="true"
+			incrementBy="50"
+			schemaName="api"
+			sequenceName="id_instituicoes_seq"
+			startValue="1" />
+
+   		<createTable schemaName="api" tableName="instituicoes">
+   			<column name="id" type="bigint">
+   				<constraints nullable="false" primaryKey="true" primaryKeyName="id_instituicoes"/>
+   			</column>
+            <column name="cnpj" type="varchar(14)">
+            	<constraints nullable="false" unique="true"/>
+            </column>
+            <column name="nome" type="varchar(150)">
+            	<constraints nullable="false" unique="true"/>
+            </column>
+   		</createTable>
+    </changeSet>
+     
+</databaseChangeLog>

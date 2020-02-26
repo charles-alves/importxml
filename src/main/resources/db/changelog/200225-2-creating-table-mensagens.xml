@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Charles Alves" id="200225-2">
+		<createSequence
+	      	ordered="true"
+			incrementBy="50"
+	      	schemaName="api"
+	      	sequenceName="id_mensagens_seq"
+	      	startValue="1" />
+
+   		<createTable schemaName="api" tableName="mensagens">
+   			<column name="id" type="bigint">
+   				<constraints nullable="false" primaryKey="true" primaryKeyName="mensagens_id"/>
+   			</column>
+            <column name="codigo_mensagem" type="varchar(23)">
+              <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="numero_controle_slc" type="varchar(8)">
+              <constraints nullable="false" />
+            </column>
+            <column name="ispb_if" type="varchar(8)">
+              <constraints nullable="false" />
+            </column>
+            <column name="tipo_informacao" type="varchar(10)">
+              <constraints nullable="false" />
+            </column>
+            <column name="data_hora_slc" type="timestamp" >
+            	<constraints nullable="false" />
+            </column>
+            <column name="data_movimento" type="date" >
+            	<constraints nullable="false" />
+            </column>
+   		</createTable>
+    </changeSet>
+</databaseChangeLog>
