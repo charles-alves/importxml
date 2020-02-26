@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -45,7 +46,7 @@ public class Mensagem {
 	@Column(name = "data_movimento", nullable = false)
 	private LocalDate dataMovimento;
 
-	@OneToMany
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	@JoinColumn(name = "mensagem_id", nullable = false)
 	private List<Liquidacao> liquidacoes = new ArrayList<>();
 

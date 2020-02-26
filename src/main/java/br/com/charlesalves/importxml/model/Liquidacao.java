@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class Liquidacao {
 	@Column(name = "numero_sequencial", nullable = false)
 	private int numeroSequencial;
 
-	@OneToMany
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	@JoinColumn(name = "liquidacao_id", nullable = false)
 	private List<Produto> produtos = new ArrayList<>();
 

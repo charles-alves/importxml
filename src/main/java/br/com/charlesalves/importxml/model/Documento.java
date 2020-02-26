@@ -2,6 +2,7 @@ package br.com.charlesalves.importxml.model;
 
 import java.util.Optional;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -43,7 +44,7 @@ public class Documento {
 	@Column(name = "id_operador_confirmacao", nullable = true)
 	private String idOperadorConfirmacao;
 
-	@OneToOne
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	@JoinColumn(name = "mensagem_id", table = "documentos", nullable = false)
 	private Mensagem mensagem;
 
