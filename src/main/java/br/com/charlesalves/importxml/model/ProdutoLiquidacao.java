@@ -38,8 +38,8 @@ public class ProdutoLiquidacao {
 	@Column(name = "cnpj_nao_liquidante_debito", nullable = false)
 	private String cnpjNaoLiquidanteDebito;
 
-	@Column(name = "cliente_debitado", nullable = false)
-	private String clienteDebitado;
+	@Column(name = "nome_cliente_debitado", nullable = false)
+	private String nomeClienteDebitado;
 
 	@Column(name = "id_cliente_debitado", nullable = true)
 	private String idClienteDebitado;
@@ -112,12 +112,12 @@ public class ProdutoLiquidacao {
 		this.cnpjNaoLiquidanteDebito = cnpjNaoLiquidanteDebito;
 	}
 
-	public String getClienteDebitado() {
-		return clienteDebitado;
+	public String getNomeClienteDebitado() {
+		return nomeClienteDebitado;
 	}
 
-	public void setClienteDebitado(String clienteDebitado) {
-		this.clienteDebitado = clienteDebitado;
+	public void setNomeClienteDebitado(String clienteDebitado) {
+		nomeClienteDebitado = clienteDebitado;
 	}
 
 	public Optional<String> getIdClienteDebitado() {

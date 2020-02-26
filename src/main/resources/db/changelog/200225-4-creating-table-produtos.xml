@@ -19,7 +19,7 @@
    			<column name="id" type="bigint">
    				<constraints nullable="false" primaryKey="true" primaryKeyName="produtos_id"/>
    			</column>
-            <column name="codigo" type="varchar(3)">
+            <column name="codigo" type="varchar(5)">
               <constraints nullable="false"/>
             </column>
    		</createTable>

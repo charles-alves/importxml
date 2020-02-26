@@ -52,13 +52,13 @@ public class Produto {
 		return getUnmodifiableProdutosLiquidacao();
 	}
 
-	public List<ProdutoLiquidacao> addProdutosLiquidacoao(ProdutoLiquidacao produtoLiquidacao) {
+	public List<ProdutoLiquidacao> addProdutoLiquidacoao(ProdutoLiquidacao produtoLiquidacao) {
 		produtosLiquidacao.add(produtoLiquidacao);
 
 		return getUnmodifiableProdutosLiquidacao();
 	}
 
-	public List<ProdutoLiquidacao> removeProdutosLiquidacoao(ProdutoLiquidacao produtoLiquidacao) {
+	public List<ProdutoLiquidacao> removeProdutoLiquidacoao(ProdutoLiquidacao produtoLiquidacao) {
 		produtosLiquidacao.remove(produtoLiquidacao);
 
 		return getUnmodifiableProdutosLiquidacao();

@@ -12,7 +12,6 @@ spring:
 
   liquibase:
     change-log: classpath:db/database.xml
-    #liquibase-schema: liquibase
 
   h2:
     console:
