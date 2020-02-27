@@ -34,6 +34,7 @@ public class MensagemController {
 		return ResponseEntity.ok(mensagens);
 	}
 
+	@GetMapping("mensagens/{id}")
 	public ResponseEntity<Mensagem> buscar(@PathVariable("id") Long id) {
 		Optional<Mensagem> mensagemOpt = mensagemService.buscar(id);
 

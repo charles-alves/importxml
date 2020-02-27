@@ -12,7 +12,7 @@ import br.com.charlesalves.importxml.model.Mensagem;
 @Repository
 public interface MensagemDao extends JpaRepository<Mensagem, Long> {
 
-	@Query("SELECT doc.mensagens FROM Documento doc WHERE doc.id = :documentoId")
+	@Query("SELECT doc.mensagem FROM Documento doc WHERE doc.id = :documentoId")
 	List<Mensagem> findAllByDocumentoId(@Param("documentoId") Long documentoId);
 
 }

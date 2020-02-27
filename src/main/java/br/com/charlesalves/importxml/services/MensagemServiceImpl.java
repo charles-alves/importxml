@@ -3,9 +3,12 @@ package br.com.charlesalves.importxml.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import br.com.charlesalves.importxml.daos.MensagemDao;
 import br.com.charlesalves.importxml.model.Mensagem;
 
+@Service
 public class MensagemServiceImpl implements MensagemService {
 
 	private MensagemDao mensagemDao;
