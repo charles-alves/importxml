@@ -19,10 +19,10 @@
    			<column name="id" type="bigint">
    				<constraints nullable="false" primaryKey="true" primaryKeyName="mensagens_id"/>
    			</column>
-            <column name="codigo_mensagem" type="varchar(23)">
+            <column name="codigo_mensagem" type="varchar(8)">
               <constraints nullable="false" unique="true"/>
             </column>
-            <column name="numero_controle_slc" type="varchar(8)">
+            <column name="numero_controle_slc" type="varchar(23)">
               <constraints nullable="false" />
             </column>
             <column name="ispb_if" type="varchar(8)">
