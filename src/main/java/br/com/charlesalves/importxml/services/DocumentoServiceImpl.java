@@ -97,10 +97,10 @@ public class DocumentoServiceImpl implements DocumentoService {
 		Mensagem mensagem = new Mensagem();
 
 		Node slc0001 = sismsg.getChildNodes().item(1);
-		NodeList slc0001Children = slc0001.getChildNodes();
+		NodeList slc0001Nodes = slc0001.getChildNodes();
 
-		for (int i = 0; i < slc0001Children.getLength(); i++) {
-			Node node = slc0001Children.item(i);
+		for (int i = 0; i < slc0001Nodes.getLength(); i++) {
+			Node node = slc0001Nodes.item(i);
 			String nodeName = node.getNodeName();
 			String nodeValue = node.getTextContent();
 
@@ -129,11 +129,11 @@ public class DocumentoServiceImpl implements DocumentoService {
 		return mensagem;
 	}
 
-	private Liquidacao criarLiquidacao(NodeList liquidacaoNodes) {
+	private Liquidacao criarLiquidacao(NodeList nodes) {
 		Liquidacao liquidacao = new Liquidacao();
 
-		for (int i = 0; i < liquidacaoNodes.getLength(); i++) {
-			Node node = liquidacaoNodes.item(i);
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Node node = nodes.item(i);
 			String nodeName = node.getNodeName();
 			String nodeValue = node.getTextContent();
 
@@ -155,11 +155,11 @@ public class DocumentoServiceImpl implements DocumentoService {
 		return liquidacao;
 	}
 
-	private Produto criarProduto(NodeList childNodes) {
+	private Produto criarProduto(NodeList nodes) {
 		Produto produto = new Produto();
 
-		for (int i = 0; i < childNodes.getLength(); i++) {
-			Node node = childNodes.item(i);
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Node node = nodes.item(i);
 			String nodeName = node.getNodeName();
 			String nodeValue = node.getTextContent();
 
@@ -175,11 +175,11 @@ public class DocumentoServiceImpl implements DocumentoService {
 		return produto;
 	}
 
-	private ProdutoLiquidacao criarProdutoLiquidacao(NodeList childNodes) {
+	private ProdutoLiquidacao criarProdutoLiquidacao(NodeList nodes) {
 		ProdutoLiquidacao produtoLiquidacao = new ProdutoLiquidacao();
 
-		for (int i = 0; i < childNodes.getLength(); i++) {
-			Node node = childNodes.item(i);
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Node node = nodes.item(i);
 			String nodeName = node.getNodeName();
 			String nodeValue = node.getTextContent();
 
