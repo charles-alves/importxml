@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(schema = "api", name = "produtos")
 @SequenceGenerator(schema = "api", name = "id_produtos_seq", sequenceName = "id_produtos_seq")
@@ -29,7 +31,8 @@ public class Produto {
 	@Column(name = "codigo", nullable = false)
 	private String codigo;
 
-	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@JsonIgnore
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE })
 	@JoinColumn(name = "produto_id", nullable = false)
 	private List<ProdutoLiquidacao> produtosLiquidacao = new ArrayList<>();
 

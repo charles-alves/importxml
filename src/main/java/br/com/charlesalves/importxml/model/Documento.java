@@ -13,6 +13,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "documentos", schema = "api")
 @SequenceGenerator(schema = "api", name = "id_ducumentos_seq", sequenceName = "id_ducumentos_seq")
@@ -44,7 +46,8 @@ public class Documento {
 	@Column(name = "id_operador_confirmacao", nullable = true)
 	private String idOperadorConfirmacao;
 
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@JsonIgnore
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE })
 	@JoinColumn(name = "mensagem_id", table = "documentos", nullable = false)
 	private Mensagem mensagem;
 

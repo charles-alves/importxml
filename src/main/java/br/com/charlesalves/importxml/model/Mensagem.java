@@ -18,6 +18,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(schema = "api", name = "mensagens")
 @SequenceGenerator(schema = "api", name = "id_mensagens_seq", sequenceName = "id_mensagens_seq")
@@ -46,7 +48,8 @@ public class Mensagem {
 	@Column(name = "data_movimento", nullable = false)
 	private LocalDate dataMovimento;
 
-	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@JsonIgnore
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE })
 	@JoinColumn(name = "mensagem_id", nullable = false)
 	private List<Liquidacao> liquidacoes = new ArrayList<>();
 
